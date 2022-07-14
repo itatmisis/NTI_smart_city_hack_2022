@@ -1,5 +1,9 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/app_theme.dart';
+import 'package:frontend/pages/register_page/register_model.dart';
+import 'package:local_hero/local_hero.dart';
+import 'package:provider/provider.dart';
 
 class IntoductionScreen extends StatefulWidget {
 
@@ -32,10 +36,10 @@ class _IntoductionScreenState extends State<IntoductionScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-          left: 10,
-          right: 10,
+          left: 16,
+          right: 16,
           top: MediaQuery.of(context).padding.top,
-          bottom: MediaQuery.of(context).padding.bottom
+          bottom: MediaQuery.of(context).padding.bottom+40
       ),
       child: Stack(
         children: [
@@ -54,21 +58,51 @@ class _IntoductionScreenState extends State<IntoductionScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                currentIndex != 0? TextButton(
-                    onPressed: () {
-                      setState(() {
-                        currentIndex--;
-                      });
-                    },
-                    child: Text('Назад')
-                ) : SizedBox(),
-                ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        currentIndex++;
-                      });
-                    },
-                    child: Text('Далее')
+                currentIndex != 0? LocalHero(
+                    tag: 'register',
+                    child: SizedBox(
+                      height: 50,
+                      child: TextButton(
+                          onPressed: () {
+                            setState(() {
+                              currentIndex--;
+                            });
+                          },
+                          child: Text('Назад')
+                      ),
+                    )
+                )
+                    : SizedBox(),
+                Consumer<RegisterModel>(
+                  builder: (_, model, __) =>
+                      LocalHero(
+                          tag: 'enter',
+                          child: SizedBox(
+                            height: 50,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  if (currentIndex == screens.length-1) {
+                                    model.currentPage = 1;
+                                  } else {
+                                    currentIndex++;
+                                  }
+                                });
+                              },
+                              style: ButtonStyle(
+                                  elevation: MaterialStateProperty.all<double>(0),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(AppTheme().buttonBorderRadius)
+                                      )
+                                  )
+                              ),
+                              child: Center(
+                                child: Text('Войти', overflow: TextOverflow.fade,),
+                              ),
+                            ),
+                          )
+                      )
                 )
               ],
             ),
