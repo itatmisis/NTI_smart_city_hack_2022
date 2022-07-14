@@ -35,52 +35,50 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
-                    flex: 2,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        IconButton(
-                          icon: Icon(Icons.menu),
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.search),
-                          onPressed: () {},
-                        ),
-                      ],
+                    flex: 0,
+                    child: IconButton(
+                      icon: Icon(Icons.menu),
+                      onPressed: () {},
                     ),
                   ),
                   Expanded(
-                    flex: 1,
-                    child: Padding (
-                      padding: EdgeInsets.only(top: 8, bottom:8, left:12, right:12),
-                      child: FloatingActionButton(
+                    flex: 0,
+                    child: IconButton(
+                      icon: Icon(Icons.search),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Expanded(
+                    flex: 0,
+                    child:
+                    Container (
+                      padding: EdgeInsets.only(top: 9, bottom: 9),
+                      child:
+                      FloatingActionButton(
                           onPressed: () { },
                           tooltip: 'Increment',
-                          child: Icon(Icons.add),
+                          child: Icon(Icons.add, size: 23),
                           shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(16.0))
+                          borderRadius: BorderRadius.all(Radius.circular(12.0))
                           ),
                       elevation: 0,
                     ),
                     )
                   ),
                   Expanded(
-                    flex: 2,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        IconButton(
-                          icon: Icon(Icons.menu),
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.search),
-                          onPressed: () {},
-                        ),
-                      ],
+                    flex: 0,
+                    child: IconButton(
+                      icon: Icon(Icons.menu),
+                      onPressed: () {},
                     ),
-                  )
+                  ),
+                  Expanded(
+                    flex: 0,
+                    child: IconButton(
+                      icon: Icon(Icons.search),
+                      onPressed: () {},
+                    ),
+                  ),
                 ],
               ),
               color: AppTheme().light_background_light,
