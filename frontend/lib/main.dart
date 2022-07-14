@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/pages/debug_page/debug_page.dart';
+import 'package:frontend/pages/register_page/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +16,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/debugPage': (context) => DebugPage()
+        '/debugPage': (context) => DebugPage(),
+        '/registerPage': (context) => RegisterPage()
       },
-      initialRoute: '/debugPage',
+      initialRoute: '/registerPage',
     );
   }
 }
