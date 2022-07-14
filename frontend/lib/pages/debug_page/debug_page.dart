@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/widgets/elevated_container/elevated_container.dart';
 
 class DebugPage extends StatelessWidget {
   @override
@@ -6,7 +7,7 @@ class DebugPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Container(),
+        child: ElevatedContainer(),
       ),
     );
   }
