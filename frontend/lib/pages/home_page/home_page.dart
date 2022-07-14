@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
                 child: AnimatedSwitcher(
                   duration: Duration(milliseconds: 200),
                   child: Center(
-                      child: AchivementScreen()
+                      child: AchievementScreen()
                   ),
                 )
             ),
@@ -52,15 +52,18 @@ class HomePage extends StatelessWidget {
                   ),
                   Expanded(
                     flex: 1,
-                    child: FloatingActionButton(
-                      onPressed: () { },
-                      tooltip: 'Increment',
-                      child: Icon(Icons.add),
-                      shape: RoundedRectangleBorder(
+                    child: Padding (
+                      padding: EdgeInsets.only(top: 8, bottom:8, left:12, right:12),
+                      child: FloatingActionButton(
+                          onPressed: () { },
+                          tooltip: 'Increment',
+                          child: Icon(Icons.add),
+                          shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(16.0))
-                      ),
+                          ),
                       elevation: 0,
                     ),
+                    )
                   ),
                   Expanded(
                     flex: 2,
