@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
 class IntoductionScreen extends StatefulWidget {
@@ -29,43 +30,58 @@ class _IntoductionScreenState extends State<IntoductionScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Align(
-          alignment: Alignment.center,
-          child: AnimatedSwitcher(
-            duration: Duration(milliseconds: 100),
-            child: SizedBox(
-              child: screens[currentIndex],
-              key: ValueKey(currentIndex),
-            ),
-          )
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              currentIndex != 0? TextButton(
-                  onPressed: () {
-                    setState(() {
-                      currentIndex--;
-                    });
-                  },
-                  child: Text('Назад')
-              ) : SizedBox(),
-              ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      currentIndex++;
-                    });
-                  },
-                  child: Text('Далее')
+    return Padding(
+      padding: EdgeInsets.only(
+          left: 10,
+          right: 10,
+          top: MediaQuery.of(context).padding.top,
+          bottom: MediaQuery.of(context).padding.bottom
+      ),
+      child: Stack(
+        children: [
+          Align(
+              alignment: Alignment.center,
+              child: AnimatedSwitcher(
+                duration: Duration(milliseconds: 100),
+                child: SizedBox(
+                  child: screens[currentIndex],
+                  key: ValueKey(currentIndex),
+                ),
               )
-            ],
           ),
-        )
-      ],
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                currentIndex != 0? TextButton(
+                    onPressed: () {
+                      setState(() {
+                        currentIndex--;
+                      });
+                    },
+                    child: Text('Назад')
+                ) : SizedBox(),
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        currentIndex++;
+                      });
+                    },
+                    child: Text('Далее')
+                )
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: DotsIndicator(
+              dotsCount: screens.length,
+              position: currentIndex.toDouble(),
+            )
+          )
+        ],
+      ),
     );
   }
 }
