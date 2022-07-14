@@ -50,17 +50,15 @@ class HomePage extends StatelessWidget {
                   ),
                   Expanded(
                     flex: 0,
-                    child:
-                    Container (
-                      padding: EdgeInsets.only(top: 9, bottom: 9),
-                      child:
-                      FloatingActionButton(
-                          onPressed: () { },
-                          tooltip: 'Increment',
-                          child: Icon(Icons.add, size: 23),
-                          shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(12.0))
-                          ),
+                    child: Padding (
+                            padding: EdgeInsets.only(top: 8, bottom:8, left:12, right:12),
+                            child: FloatingActionButton(
+                            onPressed: () { },
+                            tooltip: 'Increment',
+                            child: Icon(Icons.add),
+                              shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(16.0))
+                            ),
                       elevation: 0,
                     ),
                     )
