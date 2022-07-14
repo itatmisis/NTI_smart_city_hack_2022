@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         '/debugPage': (context) => DebugPage(),
         '/registerPage': (context) => RegisterPage()
       },
-      initialRoute: '/registerPage',
+      initialRoute: '/debugPage',
     );
   }
 }
