@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend/app_theme.dart';
 import 'package:frontend/pages/register_page/register_model.dart';
 import 'package:local_hero/local_hero.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -29,7 +30,13 @@ class _AuthScreenState extends State<AuthScreen> {
         children: [
           Align(
               alignment: Alignment.center,
-              child: Text('Остался последний шаг!\nПройдите регистрацию или войдите в аккаунт'),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Lottie.asset('assets/images/a4.json'),
+                  Text('Остался последний шаг!\nПройдите регистрацию или войдите в аккаунт', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500), textAlign: TextAlign.center,),
+                ],
+              )
           ),
           Align(
             alignment: Alignment.bottomCenter,

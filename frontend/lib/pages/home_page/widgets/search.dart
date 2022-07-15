@@ -14,6 +14,7 @@ class Search extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
               color: Colors.blue,
             ),
+            child: Image.asset('assets/images/ilya.png'),
           ),
         ),
         SizedBox(width: 20,),
@@ -31,7 +32,7 @@ class Search extends StatelessWidget {
                   children: [
                     SvgPicture.asset('assets/icons/search.svg'),
                     SizedBox(width: 10,),
-                    Text('Поиск', style: TextStyle(color: AppTheme().light_search_bar_text_hint),)
+                    Text('Поиск', style: TextStyle(color: AppTheme().light_search_bar_text_hint))
                   ],
                 ),
               )

@@ -19,13 +19,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
           left: 16,
           right: 16,
           top: MediaQuery.of(context).padding.top,
-          bottom: MediaQuery.of(context).padding.bottom
+          bottom: MediaQuery.of(context).padding.bottom+40
       ),
       child: Stack(
         children: [
           Align(
-            alignment: Alignment.topLeft,
-            child: Text('Регистрация'),
+              alignment: Alignment.topCenter,
+              child: FractionallySizedBox(
+                  heightFactor: 0.3,
+                  child:  Center(
+                    child: Text('Регистрация', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 26),),
+                  )
+              )
           ),
           Align(
             alignment: Alignment.center,
@@ -105,7 +110,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     SizedBox(
                       height: 50,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {model.currentPage = 3;},
                         style: ButtonStyle(
                             elevation: MaterialStateProperty.all<double>(0),
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(

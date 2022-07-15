@@ -3,6 +3,7 @@ import 'package:frontend/app_theme.dart';
 import 'package:frontend/pages/debug_page/debug_page.dart';
 import 'package:frontend/pages/home_page/home_page.dart';
 import 'package:frontend/pages/register_page/register_page.dart';
+import 'package:frontend/pages/test_page/test_page.dart';
 import 'package:material_color_generator/material_color_generator.dart';
 
 void main() {
@@ -21,9 +22,11 @@ class MyApp extends StatelessWidget {
       routes: {
         '/debugPage': (context) => DebugPage(),
         '/registerPage': (context) => RegisterPage(),
-        '/homePage': (context) => HomePage()
+        '/homePage': (context) => HomePage(),
+        '/testPage': (context) => TestPage()
       },
-      initialRoute: '/debugPage',
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/registerPage',
     );
   }
 }

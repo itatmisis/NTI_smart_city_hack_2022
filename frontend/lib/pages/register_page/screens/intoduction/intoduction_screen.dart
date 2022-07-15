@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend/app_theme.dart';
 import 'package:frontend/pages/register_page/register_model.dart';
 import 'package:local_hero/local_hero.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class IntoductionScreen extends StatefulWidget {
@@ -19,13 +20,23 @@ class _IntoductionScreenState extends State<IntoductionScreen> {
     Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text('Будь среди первых, кто всё изменит')
+        Lottie.asset('assets/images/a1.json'),
+        SizedBox(height: 10,),
+        Text('Прежде чем что-то делать, спроси себя «Зачем?»', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500), textAlign: TextAlign.center,),
       ],
     ),
     Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text('Будь среди первых, кто всё изменит2')
+        Lottie.asset('assets/images/a2.json'),
+        Text('Формируй мечты и идеи, превращай их в цели и достигай желаемого !', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500), textAlign: TextAlign.center,)
+      ],
+    ),
+    Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Lottie.asset('assets/images/a3.json'),
+        Text('Пройди маршрут Вдохновения - апгрейд характера, навыков и определение мечты', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500), textAlign: TextAlign.center,)
       ],
     ),
   ];

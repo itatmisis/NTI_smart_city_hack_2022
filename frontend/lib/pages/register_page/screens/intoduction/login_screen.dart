@@ -24,8 +24,13 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Stack(
         children: [
           Align(
-            alignment: Alignment.topLeft,
-            child: Text('Вход'),
+            alignment: Alignment.topCenter,
+            child: FractionallySizedBox(
+              heightFactor: 0.3,
+              child:  Center(
+                child: Text('Вход', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 26),),
+              )
+            )
           ),
           Align(
             alignment: Alignment.center,
@@ -88,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               height: 50,
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.of(context).pushReplacementNamed('/homePage');
+                                  Navigator.of(context).pushReplacementNamed('/testPage');
                                 },
                                 style: ButtonStyle(
                                   elevation: MaterialStateProperty.all<double>(0),
